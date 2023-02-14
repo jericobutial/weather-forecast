@@ -30,4 +30,5 @@ $ php artisan migrate
 $ php artisan serve
 $ npm run watch
 ```
+Use `http://127.0.0.1:8000` as project ip server to avoid login errors.
 
