@@ -31,8 +31,9 @@ GITHUB_CLIENT_SECRET=353f727a2fec902de0ccbc164d0478f219da06d3
 $ php artisan migrate
 ```
 
-Run Php artisan and Npm
+Generate APP_KEY then run Php artisan and Npm
 ```
+$ php artisan key:generate
 $ php artisan serve
 $ npm run watch
 ```
