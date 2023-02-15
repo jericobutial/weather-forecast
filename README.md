@@ -4,8 +4,13 @@
 A simple web application for checking weather forecast in different cities.
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Laravel Framework Version: 7.0
-
+## Development
+```
+Laravel Framework Version: 7.0
+Php Version: ^7.2.3|^8.0
+NodeJs Version: 12.22.12
+Npm Version: 6.2
+```
 ## Clone
 ```
 > git clone https://github.com/jericobutial/weather-forecast.git //https
@@ -18,9 +23,12 @@ $ composer install
 $ npm install
 ```
 
-## Set DATABASE_NAME on .env File
+## Set DATABASE_NAME, GITHUB CLIENT ID and GITHUB CLIENT SECRET on .env File
 ```
 DATABASE_NAME={your_db_name}
+
+GITHUB_CLIENT_ID=f2539ad39f8baa033d58
+GITHUB_CLIENT_SECRET=353f727a2fec902de0ccbc164d0478f219da06d3
 ```
 
 ## Run Migrations
@@ -28,8 +36,9 @@ DATABASE_NAME={your_db_name}
 $ php artisan migrate
 ```
 
-Run Php artisan and Npm
+## Generate APP_KEY then run Php artisan and Npm
 ```
+$ php artisan key:generate
 $ php artisan serve
 $ npm run watch
 ```
