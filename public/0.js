@@ -12,7 +12,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cities */ "./resources/js/cities.js");
 
 var api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
-// https://cors-anywhere.herokuapp.com/
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['_city'],
   data: function data() {
@@ -171,7 +170,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n@media only screen and (max-width: 425px){\n.dnone[data-v-479d98e6]{\r\n    display: none !important;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n@media screen and (max-width: 768px){\n.dnone[data-v-479d98e6]{\r\n    display: none !important;\n}\n}\r\n", ""]);
 
 // exports
 

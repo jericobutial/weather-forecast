@@ -44,7 +44,6 @@
 <script>
 import { allcity } from '../cities';
 const api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
-// https://cors-anywhere.herokuapp.com/
 export default {
   props:['_city'],
   data(){
@@ -94,7 +93,7 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (max-width: 425px){
+@media screen and (max-width: 768px){
   .dnone{
     display: none !important;
   }

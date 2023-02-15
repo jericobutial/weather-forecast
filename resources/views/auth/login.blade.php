@@ -53,8 +53,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8">
-                                <a href="/auth/redirect" class="btn btn-success">
-                                    {{ __('Use Github') }}
+                                <a href="/auth/redirect" class="btn btn-primary btn-lg">
+                                    {{ __('Login') }}
                                 </a>
                                 {{-- <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
