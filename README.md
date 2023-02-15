@@ -18,9 +18,12 @@ $ composer install
 $ npm install
 ```
 
-## Set DATABASE_NAME on .env File
+## Set DATABASE_NAME, GITHUB CLIENT ID and GITHUB CLIENT SECRET on .env File
 ```
 DATABASE_NAME={your_db_name}
+
+GITHUB_CLIENT_ID=f2539ad39f8baa033d58
+GITHUB_CLIENT_SECRET=353f727a2fec902de0ccbc164d0478f219da06d3
 ```
 
 ## Run Migrations
