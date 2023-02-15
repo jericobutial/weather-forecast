@@ -3,9 +3,12 @@
     <div class="card shadow-sm">
       <div class="card-body">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="isLoading == true">
+            <img :src="'../loader.gif'" style="width: 10%;" class="d-block m-auto" alt="" />
+          </div>
+          <div class="col-sm-12" v-if="isLoading == false">
             <div class="table-responsive">
-
+              
               <table class="table table-bordered">
                 <thead>
                   <th class="align-middle">Date(mm/dd/yyyy)</th>
@@ -30,6 +33,7 @@
               </table>
             </div>
             <button class="btn btn-primary float-right" @click="goBack">Back</button>
+            <h4 class="text-danger font-weight-bold" v-if="showErrors == true" >Oops! Something Went Wrong.</h4>
           </div>
         </div>
       </div>
@@ -40,6 +44,7 @@
 <script>
 import { allcity } from '../cities';
 const api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
+// https://cors-anywhere.herokuapp.com/
 export default {
   props:['_city'],
   data(){
@@ -47,7 +52,8 @@ export default {
       weather:'',
       showError: false,
       unit: 'imperial',
-      today: moment().format('MM/D/YYYY')
+      today: moment().format('MM/D/YYYY'),
+      isLoading: false,
     }
   },
   created(){
@@ -68,10 +74,13 @@ export default {
     fetchData(){
       let lat = allcity.find(a => a.name == this._city).lat
       let lon = allcity.find(a => a.name == this._city).lng
-      axios.get('http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+api_key).then((res) => {
+      this.isLoading = true
+      axios.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+api_key).then((res) => {
         if(res.statusText == 'OK'){
-          this.weather = res.data
-          console.log('sf', res.data)
+          setTimeout(() => {
+            this.isLoading = false;
+            this.weather = res.data
+          }, 1300)
         }
       }).catch((err) => {
         this.showError= true

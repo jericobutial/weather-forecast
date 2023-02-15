@@ -12,6 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cities */ "./resources/js/cities.js");
 
 var api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
+// https://cors-anywhere.herokuapp.com/
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['_city'],
   data: function data() {
@@ -19,7 +20,8 @@ var api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
       weather: '',
       showError: false,
       unit: 'imperial',
-      today: moment().format('MM/D/YYYY')
+      today: moment().format('MM/D/YYYY'),
+      isLoading: false
     };
   },
   created: function created() {
@@ -45,10 +47,13 @@ var api_key = 'dac8f486faeba7d04b1ee56c7ccd3824';
       var lon = _cities__WEBPACK_IMPORTED_MODULE_0__["allcity"].find(function (a) {
         return a.name == _this._city;
       }).lng;
-      axios.get('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + api_key).then(function (res) {
+      this.isLoading = true;
+      axios.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + api_key).then(function (res) {
         if (res.statusText == 'OK') {
-          _this.weather = res.data;
-          console.log('sf', res.data);
+          setTimeout(function () {
+            _this.isLoading = false;
+            _this.weather = res.data;
+          }, 1300);
         }
       })["catch"](function (err) {
         _this.showError = true;
@@ -84,7 +89,18 @@ var render = function render() {
     staticClass: "card-body"
   }, [_c("div", {
     staticClass: "row"
-  }, [_c("div", {
+  }, [_vm.isLoading == true ? _c("div", {
+    staticClass: "col-sm-12"
+  }, [_c("img", {
+    staticClass: "d-block m-auto",
+    staticStyle: {
+      width: "10%"
+    },
+    attrs: {
+      src: "../loader.gif",
+      alt: ""
+    }
+  })]) : _vm._e(), _vm._v(" "), _vm.isLoading == false ? _c("div", {
     staticClass: "col-sm-12"
   }, [_c("div", {
     staticClass: "table-responsive"
@@ -115,7 +131,9 @@ var render = function render() {
     on: {
       click: _vm.goBack
     }
-  }, [_vm._v("Back")])])])])])]);
+  }, [_vm._v("Back")]), _vm._v(" "), _vm.showErrors == true ? _c("h4", {
+    staticClass: "text-danger font-weight-bold"
+  }, [_vm._v("Oops! Something Went Wrong.")]) : _vm._e()]) : _vm._e()])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,

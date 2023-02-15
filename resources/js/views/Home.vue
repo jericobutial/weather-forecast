@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-12 text-center mb-3">

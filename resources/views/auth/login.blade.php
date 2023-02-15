@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card shadow">
 
                 <div class="card-body">
                     <p>Welcome to the weather forecast web application. Please login with your Github user to use the application and view the weather in your city.</p>

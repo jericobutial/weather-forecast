@@ -29,7 +29,7 @@ export default {
     }
   },
   created(){
-    this.autocomplete = allcity.flatMap((b) => {return b.name + ','+b.country.toLowerCase()})
+    this.autocomplete = allcity.flatMap((b) => {return b.name + ','+b.country})
   },
   methods:{
     fetchData: function(){
