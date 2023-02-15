@@ -68,7 +68,7 @@ export default {
     fetchData(){
       let lat = allcity.find(a => a.name == this._city).lat
       let lon = allcity.find(a => a.name == this._city).lng
-      axios.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+api_key).then((res) => {
+      axios.get('http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+api_key).then((res) => {
         if(res.statusText == 'OK'){
           this.weather = res.data
           console.log('sf', res.data)

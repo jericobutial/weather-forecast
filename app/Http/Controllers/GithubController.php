@@ -25,7 +25,7 @@ class GithubController extends Controller
             return redirect()->route('home');
         }else{
             $newUser = User::create([
-                'name' => $githubUser->name,
+                'name' => $githubUser->name == null ? $githubUser->nickname : $githubUser->name,
                 'email' => $githubUser->email,
                 'github_id' => $githubUser->id,
                 'github_token' => $githubUser->token,
