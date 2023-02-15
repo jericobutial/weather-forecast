@@ -9,7 +9,7 @@ A simple web application for checking weather forecast in different cities.
 Laravel Framework Version: 7.0
 Php Version: ^7.2.3|^8.0
 NodeJs Version: 12.22.12
-Npm Version: 12.22.12
+Npm Version: 6.2
 ```
 ## Clone
 ```
