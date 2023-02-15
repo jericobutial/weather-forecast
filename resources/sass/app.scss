@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "~font-awesome/scss/font-awesome";
+
+$theme_blue: #053775;
+[v-cloak] {
+  display: none;
+}
+.btn-primary, .bg-primary{
+  background-color: $theme_blue !important;
+}
